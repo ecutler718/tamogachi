@@ -1,0 +1,27 @@
+<h1>Pet List</h1>
+<div>
+  @foreach (var pet in Model)
+  {
+    <p>
+      <h3>@pet.GetName()</h3>
+      <ul>
+        <li>@pet.GetSleep()</li>
+        <li>@pet.GetFood()</li>
+        <li>@pet.GetHappiness()</li>
+      </ul>
+      <br>
+      <form action="/sleep_add/@pet.GetId()" method="post">
+        <button type='submit'>Sleep</button>
+      </form>
+      <form action="/feed_add/@pet.GetId()" method="post">
+        <button type='submit'>Feed</button>
+      </form>
+      <form action="/happiness_add/@pet.GetId()" method="post">
+        <button type='submit'>Play</button>
+      </form>
+    </p>
+    <br>
+  }
+
+
+</div>
